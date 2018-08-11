@@ -19,7 +19,12 @@ public class Accounts {
 	private String lastName;
 	private String accountNumber;
 	
-	
+	@Override
+	public String toString() {
+		return "Accounts [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", accountNumber="
+				+ accountNumber + ", getFirstName()=" + getFirstName() + ", getLastName()=" + getLastName()
+				+ ", getAccountNumber()=" + getAccountNumber() + ", getId()=" + getId() + "]";
+	}
 	public String getFirstName() {
 		return firstName;
 	}

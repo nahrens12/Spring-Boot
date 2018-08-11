@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "spring.datasource.lastName",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.lastName'"
+  },
+  {
+    "name": "spring.datasource.firstName",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.firstName'"
+  },
+  {
+    "name": "spring.datasource.accountNumber",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.accountNumber'"
+  }
+]}
