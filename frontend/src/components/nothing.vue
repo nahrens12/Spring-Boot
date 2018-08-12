@@ -1,7 +1,8 @@
 <template>
-  <div class="hello">
+  <div class="accounts">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2>Get Accounts</h2>
+    <h2>Create Account</h2>
     <ul>
       <li>
         <a
@@ -85,14 +86,15 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Accounts',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Account Management System'
     }
   }
 }
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

@@ -1,0 +1,10 @@
+{
+  "groups": [{
+    "name": "spring.datasource",
+    "type": "javax.sql.DataSource",
+    "sourceType": "com.qa.AccountManagement.config.PersistenceConfig",
+    "sourceMethod": "datasource()"
+  }],
+  "properties": [],
+  "hints": []
+}

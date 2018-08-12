@@ -45,7 +45,7 @@ public class AccountController {
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Accounts> updateAccount(@PathVariable(value="id") long id, @RequestBody Accounts account){
-		Accounts change =accountRepo.findOne(id);
+		Accounts change = accountRepo.findOne(id);
 		change.setFirstName(account.getFirstName());
 		change.setLastName(account.getLastName());
 		change.setAccountNumber(account.getAccountNumber());

@@ -1,6 +1,7 @@
-com\qa\Database\SqliteConnection.class
+com\qa\AccountManagement\config\PersistenceConfig.class
 com\qa\AccountManagement\controller\AccountController.class
 com\qa\AccountManagement\controller\HomeController.class
 com\qa\AccountManagement\model\Accounts.class
 com\qa\AccountManagement\App.class
+META-INF\spring-configuration-metadata.json
 com\qa\AccountManagement\repo\AccountRepo.class
