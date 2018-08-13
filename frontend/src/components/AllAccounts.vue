@@ -16,6 +16,8 @@
         <td>{{row.firstName}}</td>
         <td>{{row.lastName}}</td>
         <td>{{row.accountNumber}}</td>
+        <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row()">
+        <input type="button" id="delete_button2" value="Delete" class="delete" onclick="delete_row()">
       </tr>
       </tbody>
     </table>
