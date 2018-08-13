@@ -1,11 +1,6 @@
 <template>
   <div class="accounts">
     <h1>Accounts</h1>
-
-
-
-
-
     <table id="firstTable">
       <thead>
       <tr>
@@ -24,8 +19,6 @@
       </tr>
       </tbody>
     </table>
-
-
   </div>
 </template>
 
@@ -36,11 +29,10 @@ export default {
   name: 'AllAccounts',
   data () {
     return {
-      rows : []
+      rows: []
     }
-
   },
-  mounted(){
+  mounted () {
     this.fetchData()
   },
 
@@ -93,8 +85,4 @@ export default {
   table tbody tr:nth-child(2n) td {
     background: #D4D8F9;
   }
-
-
-
-
 </style>
