@@ -1,7 +1,6 @@
 <template>
   <div class="accounts">
-    <h1>{{ msg }}</h1>
-    <h2>Create Account</h2>
+     <h2>Create Account</h2>
     <ul>
       <li>
     <input type="text" v-model="Accounts.firstName" placeholder="first name">
@@ -9,11 +8,6 @@
     <input type="text" v-model="Accounts.accountNumber" placeholder="account number">
     <button @click="createAccounts()">Create Accounts</button>
     </li>
-    <div v-if="showResponse"><h6>Accounts created with Id: {{ response }}</h6></div>
-
-    <button v-if="showResponse" @click="retrieveAccounts()">Retrieve Accounts {{Accounts.id}} data from database</button>
-
-      <h4 v-if="showRetrieveAccounts">Retrieved Accounts {{retrieveAccounts.firstName}} {{retrieveAccounts.lastName}} {{retrieveAccounts.accountNumber}}</h4>
     </ul>
       <ul>
       <br>
@@ -63,44 +57,28 @@ export default {
   data () {
     return {
       response: [],
-      Accounts: {
-        firstName: '',
-        lastName: '',
-        accountNumber: '',
-        id: 0,
-        msg: 'Account Management System'
-      }
+      Accounts: {firstName: '', lastName: '', accountNumber: ''}
     }
   },
-  methods: { createAccounts () {
-    var params = new URLSearchParams()
-    params.append('firstName', this.Accounts.firstName)
-    params.append('lastName', this.Accounts.lastName)
-    params.append('accountNumber', this.Accounts.accountNumber)
-    axios.post(`/Accounts/`, params)
-      .then(response => {
+  methods: {
+    createAccounts () {
+      axios.post('http://localhost:8081/Accounts/', {
+        firstName: this.Accounts.firstName,
+        lastName: this.Accounts.lastName,
+        accountNumber: this.Accounts.accountNumber
+      })
+    },
+    retrieveAccounts () {
+      axios.get(`http://localhost:8080/Accounts/`)
+        .then(response => {
         // JSON responses are automatically parsed.
-        this.response = response.data
-        this.Accounts.id = response.data
-        console.log(response.data)
-        this.showResponse = true
-      })
-      .catch(e => {
-        this.errors.push(e)
-      })
-  },
-  retrieveAccounts () {
-    axios.get(`/Accounts/` + this.Accounts.id)
-      .then(response => {
-        // JSON responses are automatically parsed.
-        this.retrieveAccounts = response.data
-        console.log(response.data)
-        this.showRetrieveAccounts = true
-      })
-      .catch(e => {
-        this.errors.push(e)
-      })
-  }
+          this.retrieveAccounts = response.data
+          console.log(response.data)
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    }
   }
 }
 

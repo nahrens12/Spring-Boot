@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <router-link :to="{name: 'Accounts' }">Create Accounts</router-link>
+    <router-link to="/AllAccounts">Display Accounts</router-link>
+    <!--<all-accounts></all-accounts>-->
     <router-view/>
   </div>
 </template>
 
 <script>
+import allAccounts from './components/AllAccounts.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'allAccounts': allAccounts
+  }
 }
 </script>
 
